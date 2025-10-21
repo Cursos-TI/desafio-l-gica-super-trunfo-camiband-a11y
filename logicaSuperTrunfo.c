@@ -156,5 +156,77 @@ if (superpoder1 > superpoder2)
 else
     printf("****** A cidade vencedora é: %s (Carta 2) ******\n\n", nomedacidade2);
 
+
+
+int opcao; 
+
+printf("***** MENU DE COMAPRACAO ********\n");
+printf("1 - Comparar Populacao\n");
+printf("2 - Comparar Area\n ");
+printf("3 - Comparar PIB\n");
+printf("4 - Comparar Pontos Turisticos\n");
+printf("5 - Comparar Super Poder\n");
+printf("****Escolha uma opcao ****\n");
+scanf("%d", &opcao);
+
+switch (opcao)
+{
+case 1: {
+    if(populacao1 > populacao2)
+        printf("A Carta 1 (%s) tem maior populacao!\n", nomedacidade1);
+    else if (populacao1 > populacao2)
+        printf("A Carta 2 (%s) tem maior populacao!\n", nomedacidade2);
+    else
+        printf("Empate - As duas cidades tem a mesma populcao!\n");
+    break;
+    
+case 2: 
+    if(areaemkm1 > areaemkm2)
+        printf("A Carta 1 (%s) tem maior area m km2!\n", nomedacidade1);
+    else if (areaemkm1 > areaemkm2)
+        printf("A Carta 2 (%s) tem maior area em km2!\n", nomedacidade2);
+    else
+        printf("Empate - As duas cidades tem a mesma area em km2!\n");
+    break;
+    
+case 3: 
+    if(pib1 > pib2)
+        printf("A Carta 1 (%s) tem maior PIB!\n", nomedacidade1);
+    else if (pib1 > pib2)
+        printf("A Carta 2 (%s) tem maior PIB!\n", nomedacidade2);
+    else
+        printf("Empate - As duas cidades tem o mesmo PIB!\n");
+    break;
+
+case 4: 
+    if(numeropontosturisticos1 > numeropontosturisticos2)
+        printf("A Carta 1 (%s) tem mais pontos turisticos!\n", nomedacidade1);
+    else if (numeropontosturisticos1 > numeropontosturisticos2)
+        printf("A Carta 2 (%s) tem mais pontos turisticos!\n", nomedacidade2);
+    else
+        printf("Empate - As duas cidades tem a mesma quantidade de pontos turisticos!\n");
+    break;
+
+case 5: 
+    if(superpoder1 > superpoder2)
+        printf("A Carta 1 (%s) tem um super poder maior!\n", nomedacidade1);
+    else if (areaemkm1 > areaemkm2)
+        printf("A Carta 2 (%s) tem um super poder maior!\n", nomedacidade2);
+    else {
+        printf("Superpoderes iguais! Comparando critérios secundários...\n");
+
+        if (populacao1 > populacao2)
+            printf("Desempate: Carta 1 venceu por maior população.\n");
+        else if (pib1 > pib2)
+             printf("Desempate: Carta 1 venceu por maior PIB.\n");
+        else if (areaemkm1 > areaemkm2)
+             printf("Desempate: Carta 1 venceu por maior área.\n");
+        else
+          printf("As cartas estão totalmente empatadas!\n");
+     }
+    break;
+
+    }
+
     return 0;
 }
