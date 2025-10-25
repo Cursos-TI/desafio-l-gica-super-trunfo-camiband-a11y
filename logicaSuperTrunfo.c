@@ -228,5 +228,99 @@ case 5:
 
     }
 
+int resultado1, resultado2;
+char primeiroatributo, segundoatributo;
+int ataque1, ataque2, defesa1, defesa2, recuo1, recuo2;
+
+srand(time(0)); 
+ataque1 = 1;
+ataque2 = 0;
+defesa1 = 1;
+defesa2 = 0;
+recuo1 = 1; 
+recuo2 = 0;
+
+printf("Bem vindo ao jogo!\n");
+printf("Escolha o primeiro atributo:\n");
+printf("Digite A para atacar\n");
+printf("Digite D para defender\n");
+printf("Digite R para recuar\n");
+
+printf("Escolha a comparacao: \n");
+scanf(" %c", &primeiroatributo);
+
+switch (primeiroatributo)
+{
+case 'A':
+case 'a':
+    printf("Voce escolheu a opcao de atacar! \n");
+    resultado1 = ataque1 > ataque2 ? 1 : 0;
+    break;
+
+case 'D':
+case 'd':
+    printf("Voce escolheu a opcao de defesa! \n");
+    resultado1 = defesa1 > defesa2 ? 1 : 0;
+    break;    
+
+case 'R':
+case 'r':
+    printf("Voce escolheu a opcao de recuar! \n");
+    resultado1 = recuo1 > recuo2 ? 1 : 0;
+    break;
+default:
+    printf("Opcao de jogo invalida\n");
+    break;
+}
+
+printf("Escolha o segundo atributo:\n");
+printf("Digite A para atacar\n");
+printf("Digite D para defender\n");
+printf("Digite R para recuar\n");
+
+printf("Escolha a comparacao: \n");
+scanf(" %c", &segundoatributo);
+
+if(primeiroatributo == segundoatributo)
+{
+    printf("Voce escoleu o mesmo atributo!");
+} else {
+    switch (segundoatributo)
+    {
+case 'A':
+case 'a':
+    printf("Voce escolheu a opcao de atacar! \n");
+    resultado2 = ataque1 > ataque2 ? 1 : 0;
+    break;
+
+case 'D':
+case 'd':
+    printf("Voce escolheu a opcao de defesa! \n");
+    resultado2 = defesa1 > defesa2 ? 1 : 0;
+    break;    
+
+case 'R':
+case 'r':
+    printf("Voce escolheu a opcao de recuar! \n");
+    resultado2 = recuo1 > recuo2 ? 1 : 0;
+    break;
+default:
+    printf("Opcao de jogo invalida\n");
+    break;
+}
+
+
+if (resultado1 && resultado2)
+{
+    printf("Parabens, voce venceu!\n");
+
+} else if (resultado1 != resultado2){
+    printf("Empate!\n");
+
+} else {
+    printf("Infelizmente, voce perdeu!\n");
+}
+
+
     return 0;
 }
